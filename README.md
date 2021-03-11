@@ -1,5 +1,5 @@
 # Anomaly-Detection-API
-This is a super simle anomaly detection api, developped with  median absolute deviation.
+This is a super simle anomaly detection api, developped with  median absolute deviation. For the moment this repository is not finished and probably will not work properly when you try it, please dont waste time on it :)
 
 ## Installation
 
