@@ -1,15 +1,14 @@
 import statistics
 
-# takes dict as a parameter returns array, crazy simple std oriented anomaly detection func.
-def std_anomaly_detect(sample):
-    numberArray = []
-    for key in sample.keys():
-        numberArray.append(sample[key])
+
+array = [1,2,1,3,2,3,4,1,2,20]
+# takes array as a parameter returns array, crazy simple std oriented anomaly detection func.
+def anomaly_detector(numberArray):
     resultArray = []
     std=statistics.stdev(numberArray)
-    upperBoundry = statistics.mean(numberArray) + 2*std
-    lowerBoundry = statistics.mean(numberArray) - 2*std
-
+    upperBoundry = statistics.mean(numberArray) + (2*std)
+    lowerBoundry = statistics.mean(numberArray) - (2*std)
+    print(std,upperBoundry,lowerBoundry)
     for number in numberArray:
         if number<upperBoundry and number>lowerBoundry:
             resultArray.append(1) #not anomaly
@@ -18,20 +17,4 @@ def std_anomaly_detect(sample):
 
     return resultArray
 
-# same function but returns a dictionary
-def detect_anomalies(sample):
-    numberArray = []
-    for key in sample.keys():
-        numberArray.append(sample[key])
-    std=statistics.stdev(numberArray)
-    upperBoundry = statistics.mean(numberArray) + 2*std
-    lowerBoundry = statistics.mean(numberArray) - 2*std
-    resultDict = {}
-    i = 0
-    for number in numberArray:
-        if number<upperBoundry and number>lowerBoundry:
-            resultDict[i] = 1
-        else:
-            resultDict[i] = -1 # anomaly
-        i += 1
-    return resultDict
+print(anomaly_detector(array))
