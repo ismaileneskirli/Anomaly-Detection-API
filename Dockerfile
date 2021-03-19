@@ -1,13 +1,8 @@
 FROM python:latest
 
-RUN mkdir /app/
-WORKDIR /app/
-COPY ./requirements.txt /app/requirements.txt
+COPY requirements.txt ./requirements.txt
+COPY std.py ./std.py
+COPY server.py ./server.py
 
-RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
-EXPOSE 8008
-
-
-ENTRYPOINT [ "python" ]
-CMD [server.py]
+CMD ["python", "./server.py"]

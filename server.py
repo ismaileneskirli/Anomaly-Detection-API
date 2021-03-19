@@ -7,7 +7,6 @@ import os
 
 app = Flask(__name__)
 api = Api(app)
-port = sys.argv[1]
 
 sampledict = {"1":10,"2":12,"3":14,"4":8,"5":11,"6":1000}
 anomaly_put_args = reqparse.RequestParser()
@@ -31,4 +30,4 @@ class AnomalyAPI(Resource):
 api.add_resource(AnomalyAPI,'/')
 
 if __name__ == '__main__':
-    app.run(host="0.0.0.0", port= port)
+    app.run(host="0.0.0.0", port= 5000)
