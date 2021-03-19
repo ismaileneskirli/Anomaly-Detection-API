@@ -30,3 +30,13 @@ MAD = median(|Xi - avg(X)|)
 
 In comparison to the standard deviation it's advantage is robustness. Both the mean and the standard deviation are highly influenced by
 outliers therefore they are bad for detecting anomalies and may give false alerts.
+
+
+
+## Current usage of the api
+
+docker build -t your_docker_image_name -f Dockerfile .
+docker run -d -p 5000:8008 your_docker_image_name
+
+now api works in port 5000.
+run python client.py to test it.
